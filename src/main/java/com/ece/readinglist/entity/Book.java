@@ -2,46 +2,91 @@ package com.ece.readinglist.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-@Entity // Bu sınıfn bir veritabanı tablosu olduğunu söylüyor.
-@Table(name = "books" ) // Veritabanında tablonun adı 'books' olsun.
+
+@Entity
+@Table(name = "books")
 public class Book {
-    @Id // Bu alanın kimlik numarası (Primary Key) olduğunu belirtir.
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // ID otomatik olarak  artsın (1,2,3..)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title; //Kitap Adı
-    private String author; // Yazar
-    private int pageCount; // Sayfa sayısı
-    private String genre; // Türü
+    private String title;
+    private String author;
+    private int pageCount;
+    private String genre;
 
-    private LocalDate startDate; // Başlanan tarih
-    private LocalDate endDate; // Bitirilen tarih.
-    private boolean isCompleted; // Bitti mi?
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private boolean isCompleted;
 
-    // --- 1. BOŞ CONSTRUCTOR (Zorunlu) ---
-    public Book(){
+    // --- BOŞ CONSTRUCTOR ---
+    public Book() {
     }
-    // --- GETTER VE SETTER METOTLARI ---
-    // (Veriye ulaşmak ve değiştirmek için kapılar)
-    public Long getId() {return id;}
-    public void setId(Long Id) {this.id = id;}
 
-    public String getTitle() {return title;}
-    public void setTitle(String title) {this.title = title;}
+    // --- GETTER VE SETTER METOTLARI (DÜZELTİLMİŞ HALİ) ---
 
-    public String getAuthor() {return author;}
-    public void setAuthor(String author) {this.author = author;}
+    public Long getId() {
+        return id;
+    }
 
-    public int getPageCount() {return pageCount;}
-    public void setGenre(String genre) {this.genre = genre;}
+    public void setId(Long id) { // Düzeltildi: 'Id' yerine 'id'
+        this.id = id;
+    }
 
-    public LocalDate getStartDate(){return startDate;}
-    public void setStartDate(LocalDate startDate) {this.startDate = startDate;}
+    public String getTitle() {
+        return title;
+    }
 
-    public LocalDate getEndDate() {return endDate;}
-    public void setEndDate(LocalDate endDate) {this.endDate = endDate;}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    public boolean isCompleted() {return isCompleted;}
-    public void setCompleted(boolean completed) {isCompleted = completed;}
+    public String getAuthor() {
+        return author;
+    }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) { // Eklendi!
+        this.pageCount = pageCount;
+    }
+
+    public String getGenre() { // Eklendi!
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public boolean isCompleted() { // boolean için 'is' kullanılır, doğru.
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
 }
