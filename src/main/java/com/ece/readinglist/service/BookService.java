@@ -56,5 +56,10 @@ public class BookService {
             throw new RuntimeException("aradığınız ID'ye ait kitap bulunamadı!");
         }
     }
+    // ID ile tek kitap bulma
+    public Book getBookById(Long id){
+        return bookRepository.findById(id).orElse(null);
+        // Bulursa kitabı döndürür, bulamazsa null döner
+    }
 }
 

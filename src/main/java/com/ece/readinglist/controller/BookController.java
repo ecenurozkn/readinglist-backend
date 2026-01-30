@@ -30,6 +30,10 @@ public class BookController {
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
+    @GetMapping("/{id}")
+    public Book getBookById(@PathVariable Long id){
+        return bookService.getBookById(id);
+    }
 
     // 3. TAMAMLANDI İŞARETLE (Postman: PUT isteği)
     // Örnek kullanım: /api/books/1/complete (1 numaralı kitabı bitirir)
