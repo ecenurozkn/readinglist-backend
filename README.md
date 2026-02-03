@@ -97,6 +97,6 @@ Bash
 👤 İletişim
 Ece Nur Özkan
 
-LinkedIn: www.linkedin.com/in/ece-nur-ozkan
+LinkedIn: www.linkedin.com/in/ecenurozkan
 
 Medium: https://medium.com/@ecenurozk
